@@ -1,0 +1,71 @@
+Keystrokes for Navigating Command Lines
+------------------------------------------
+01) Ctrl+F ---> Character forward (Go forward one character)
+02) Ctrl+B ---> Character backward(Go backward one character)
+03) Ctrl+F ---> Word forward (Go forward one word )
+04) Ctrl+B ---> word Backward (Go backward one word )
+05) Ctrl+A ---> Beginning of line (Go the beginning of the current line)
+06) Ctrl+E ---> End of the line (Go to the end of the line)
+07) Ctrl+L ---> Clear screen (Clear screen and leave line at the top of the screen)
+
+
+Keystrokes for Editing Command Lines
+------------------------------------
+
+01) Ctrl+D------->  Delete current (Delete the current character.)
+02) Backspace---->  Delete previous (Delete the previous character.)
+03) Ctrl+T------->  Transpose character (Switch positions of current and previous characters.)
+04) Alt+T-------->  Transpose words (Switch positions of current and previous words.)
+05) Alt+U-------->  Uppercase word (Change the current word to uppercase.)
+06) Alt+L-------->  Lowercase word (Change the current word to lowercase.)
+07) Alt+C-------->  Capitalize word (Change the current word to an initial capital.)
+08) Ctrl+V------->  Insert special character (Add a special character. For example, to add a Tab character, press Ctrl+V+Tab.)
+
+
+Keystrokes for Cutting and Pasting Text from within Command Lines
+-----------------------------------------------------------------
+
+01) Ctrl+K----> Cut end of line (Cut text to the end of the line.)
+02) Ctrl+U----> Cut beginning of line (Cut text to the beginning of the line.)
+03) Ctrl+W----> Cut previous word (Cut the word located behind the cursor.)
+04) Alt+D-----> Cut next word (Cut the word following the cursor.)
+05) Ctrl+Y----> Paste recent text (Paste most recently cut text.)
+06) Alt+Y-----> Paste earlier text (Rotate back to previously cut text and paste it.)
+07) Ctrl+C----> Delete whole line (Delete the entire line.)
+
+
+Keystrokes for Using Command History
+--------------------------------------
+
+01) Arrow key --->
+02) Ctrl+R ----> Reverse incremental search
+03) Ctrl+S ----> Forward incremental search
+04) Alt+P ---> Reverse search
+05) Alt+N ---> Forward search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
