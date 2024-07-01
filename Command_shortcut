@@ -36,12 +36,200 @@ Keystrokes for Cutting and Pasting Text from within Command Lines
 
 Keystrokes for Using Command History
 --------------------------------------
-
 01) Arrow key --->
-02) Ctrl+R ----> Reverse incremental search
-03) Ctrl+S ----> Forward incremental search
-04) Alt+P ---> Reverse search
-05) Alt+N ---> Forward search
+02) Ctrl+R ------> Reverse incremental search
+03) Ctrl+S ------> Forward incremental search
+04) Alt+P -------> Reverse search
+05) Alt+N -------> Forward search
+
+Common Shell Environment Variables
+----------------------------------
+01) BASH -----------> FULL path name of bash command. /bin/bash
+02) BASH_VERSION ---> Representing the current version of bash command
+03) EUID -----------> Effective user ID number of current user.
+04) FCEDIT ---------> TEXT Editor used by fc command
+05) HISTFILE -------> Location of history file
+06) HISTFILESIZE ---> NUMBER OF HISTORY ENTRIES. BY default value is 1000
+07) HISTCMD --------> This returns the number of the current command in history list.
+08) HOME -----------> Home directory
+09) HOSTTYPE -------> This is a value that describes the computer architecture on which the Linux system is running.
+10) MAIL -----------> This the location of mailbox file. /var/spool/mail
+11) OLDPWD ---------> THAT WAS THE directory before you changed th the current working directory
+12) OSTYPE ---------> CURRENT operating system
+13) PATH -----------> This is the colon-separated list of directories used to find commands that you type.
+14) PPTD -----------> This is the process ID of the command that started the current shell (for example, the Terminal window containing the shell).
+15) PROMPT_COMMAND -> This can be set to a command name that is run each time before your shell prompt is displayed.
+16) PS1 ------------> This sets the value of your shell prompt. There are many items that you can read into your prompt
+                      (date, time, username, hostname, and so on).Sometimes a command requires additional prompts,
+                       which you can set with the variables PS2, PS3, and so on.
+
+17) PWD -------------> CURRENT working directory
+18) RANDOM ----------> Accessing this variable causes a random number to be generated. The number is between 0 and 99999.
+19) SECONDS ---------> This is the number of seconds since the time the shell was started.
+20) SHLVL -----------> This is the number of shell levels associated with the current shell
+                       session. When you log in to the shell, the SHLVL is 1. Each time you
+                       start a new bash command (by, for example, using su to become a new
+                       user, or by simply typing bash), this number is incremented.
+
+21) TMOUT -----------> This can be set to a number representing the number of seconds the
+                       shell can be idle without receiving input. After the number of seconds
+                       is reached, the shell exits. This security feature makes it less likely for
+                       unattended shells to be accessed by unauthorized people. (This must
+                       be set in the login shell for it actually to cause the shell to log out the user.)
+
+
+Bash Configuration Files
+--------------------------
+01) /etc/profile -----> This sets up user environment information for every user. It is executed when you first log in
+02) /etc/bashrc ------> This executes for every user who runs the bash shell each time a bash shell is opened.
+03) ~/.bash_profile --> This is used by each user to enter information that is specific to his or her use of the shell. It is executed only once—when the user logs in
+04) ~/.bashrc --------> This contains the information that is specific to your bash shells. It is read
+                        when you log in and also each time you open a new bash shell.
+                        This is the best location to add aliases so that your shell picks them up
+
+05) ~/.bash_logout ---> This executes each time you log out (exit the last bash shell).
+
+
+
+Characters to Add Information to Bash Prompt
+-----------------------------------------------
+01) \! ---->  This shows the current command history number. This includes all previous commands stored for your username.
+02) \# ---->  This shows the command number of the current command. This includes only the commands for the active shell.
+03) \$ ---->  This shows the user prompt ($) or root prompt (#), depending on which type of user you are.
+04) \W ---->  This shows only the current working directory base name. For example, if the current working directory was /var/spool/mail, this value simply appears as mail.
+05) \[ ---->  This precedes a sequence of nonprinting characters. This can be used to add a Terminal control sequence into the prompt for such things as changing colors, adding blink effects, or making characters bold. (Your Terminal determines the exact sequences available.)
+06) \] ---->  This follows a sequence of nonprinting characters.
+07) \\ ---->  This shows a backslash.
+08) \d ---->  This displays the day name, month, and day number of the current date, for example, Sat Jan 23.
+09) \h ---->  This shows the hostname of the computer running the shell.
+10) \n ---->  This causes a newline to occur.
+11) \nnn -->  This shows the character that relates to the octal number replacing nnn.
+12) \s ---->  This displays the current shell name. For the bash shell, the value would be bash.
+13) \t ---->  This prints the current time in hours, minutes, and seconds, for example, 10:14:39.
+14) \u ---->  This prints your current username.
+15) \w ---->  This displays the full path to the current working directory
+
+
+####################
+(http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO) for information on changing colors, commands, and other features of your bash shell prompt.
+####################
+
+
+Adding environment variables
+-----------------------------
+01) TMOUT ------> This sets how long the shell can be inactive before bash automatically exits.example TMOUT=1800 (it's count second)
+02) PATH -------> PATH As described earlier, the PATH variable sets the directories that are searched for
+                  the commands that you use. If you often use directories of commands that are not in
+                  your path, you can permanently add them. To do this, add a PATH variable to your
+                  .bashrc file. For example, to add a directory called /getstuff/bin, add the
+                  following:
+                   PATH=$PATH:/getstuff/bin ; export PATH
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
