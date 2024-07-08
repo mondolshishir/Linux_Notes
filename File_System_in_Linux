@@ -47,3 +47,29 @@ Some of these Linux directories Details Here:
                 /var/spool (such as mail, cups, and news). The /var directory contains directories
                 and files that are meant to change often. On server computers, it is common to create
                 the /var directory as a separate filesystem, using a filesystem type that can be easily expanded.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

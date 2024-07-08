@@ -108,6 +108,7 @@ Characters to Add Information to Bash Prompt
 13) \t ---->  This prints the current time in hours, minutes, and seconds, for example, 10:14:39.
 14) \u ---->  This prints your current username.
 15) \w ---->  This displays the full path to the current working directory
+16) n, N -->  Sometimes we to need see a big file, but mouse is not work in CLI, so we used n & N
 
 
 ####################
@@ -115,7 +116,7 @@ Characters to Add Information to Bash Prompt
 ####################
 
 
-Adding environment variables
+Adding environment variables in .bashrc file
 -----------------------------
 01) TMOUT ------> This sets how long the shell can be inactive before bash automatically exits.example TMOUT=1800 (it's count second)
 02) PATH -------> PATH As described earlier, the PATH variable sets the directories that are searched for
@@ -124,6 +125,12 @@ Adding environment variables
                   .bashrc file. For example, to add a directory called /getstuff/bin, add the
                   following:
                    PATH=$PATH:/getstuff/bin ; export PATH
+                   M=/etc/abc/hello.txt ; export M
+
+                   for checking PATH:
+                   $ ls /bin
+
+
 
 
 

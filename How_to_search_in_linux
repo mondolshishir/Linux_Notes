@@ -1,0 +1,50 @@
+
+
+                                Using Metacharacters and Operators
+                                ----------------------------------
+
+Using file-matching metacharacters
+----------------------------------
+Example: apple, banana, grape, grapefruit, watermelon
+
+01) * ---------> Matches any number of characters.
+        Example: ls a* ;apple
+                 ls g* ; grape grapefruit;
+                 ls g*t ; grapefruit
+                 ls *e* ; apple grape grapefruit watermelon ;
+                 ls *n* ; banana watermelon ;
+                 ls [abw]* ; apple banana watermelon
+                 ls [agw]*[ne] ; apple grape watermelon ;
+                 ls [a-g]* ; apple banana grape grapefruit
+
+02) ? ---------> Matches any one character.
+        Example: ls ????e ; apple grape
+                 ls g???e* grape grapefruit
+03) [...] -----> Matches any one of the characters between the brackets,
+                 which can include a hyphen-separated range of letters or numbers.
+
+
+
+Using file-redirection metacharacters
+-------------------------------------
+
+$ mail root < ~/.bashrc
+$ man chmod | col -b > /tmp/chmod
+$ echo "I finished the project on $(date)" >> ~/projects
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
