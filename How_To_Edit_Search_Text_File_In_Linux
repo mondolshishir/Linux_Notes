@@ -1,0 +1,326 @@
+Text Editor
+------------
+01) nano ----> This popular, streamlined text editor is used with many bootable Linux systems and
+               other limited-space Linux environments. For example, nano is available to edit text files during a Gentoo Linux install process.
+02) gedit —--> The GNOME text editor runs on the desktop.
+03) jed —----> This screen-oriented editor was made for programmers.
+               Using colors, jed can highlightcode you create so you can easily read the code and spot syntax errors. Use the Alt key toselect menus to manipulate your text.
+04) joe—-----> The joe editor is similar to many PC text editors. Use control and arrow keys to move around.
+               Press Ctrl+C to exit with no save or Ctrl+X to save and exit.
+05) kate —---> This nice-looking editor comes in the kdebase package.
+               It has lots of bells andwhistles, such as highlighting for different types of programming languages and controlsfor managing word wrap.
+06) kedit —--> This GUI-based text editor comes with the KDE desktop.
+07) mcedit --> In this editor, function keys help you get around, save, copy, move, and delete text.
+               Like jed and joe, mcedit is screen-oriented. It comes in the mc package in RHEL and Fedora.
+08) nedit ---> This is an excellent p
+09) vi ------>
+10) vim ----->
+
+
+ShortCut key
+---------------
+■ W —--> Moves the cursor to the beginning of the next word (delimited by spaces or tabs).
+■ b —--> Moves the cursor to the beginning of the previous word (delimited by spaces,tabs, or punctuation).
+■ B —--> Moves the cursor to the beginning of the previous word (delimited by spaces or tabs).
+■ 0  --> (zero)—Moves the cursor to the beginning of the current line.
+■ $ —--> Moves the cursor to the end of the current line.
+■ H —--> Moves the cursor to the upper-left corner of the screen (fi rst line on the screen).
+■ M —--> Moves the cursor to the fi rst character of the middle line on the screen.
+■ L —--> Moves the cursor to the lower-left corner of the screen (last line on the screen).
+
+
+Deleting, copying, and changing text
+--------------------------------------------
+
+■ x —---------> Deletes the character under the cursor .
+■ X —---------> Deletes the character directly before the cursor.
+■ d<?> —------> Deletes some text.
+■ c<?> —------> Changes some text.
+■ y<?> —------> Yanks (copies) some text.
+■ dw —--------> Deletes (d) a word (w) after the current cursor position..
+■ db —--------> Deletes (d) a word (b) before the current cursor position.
+■ dd —--------> Deletes (d) the entire current line (d).
+■ c$ —--------> Changes (c) the characters (actually erases them) from the current character to the end of the current line ($) and goes into input mode.
+■ c0 —--------> Changes (c) (again, erases characters) from the previous character to the beginning of    the current line (0) and goes into input mode.
+■ cl —--------> Erases (c) the current letter (l) and goes into input mode.
+■ cc —--------> Erases (c) the line (c) and goes into input mode.
+■ yy —--------> Copies (y) the current line (y) into the buffer.
+■ y) —--------> Copies (y) the current sentence ( ) ), to the right of the cursor, into the buffer.
+■ y} —--------> Copies (y) the current paragraph ( } ), to the right of the cursor, into the buffer.
+■ 3dd —-------> Deletes (d) three (3) lines (d), beginning at the current line.
+■ 3dw —-------> Deletes (d) the next three (3) words (w).
+■ 5cl —-------> Changes (c) the next fi ve (5) letters (l) (that is, removes the letters and enters input mode).
+■ 12j —-------> Moves down (j) 12 lines (12).
+■ 5cw —-------> Erases (c) the next fi ve (5) words (w) and goes into input mode.
+■ 4y) —-------> Copies (y) the next four (4) sentences ( ) ).
+
+
+
+
+
+Exiting vi
+-------------
+■ ZZ—-----> Saves the current changes to the fi le and exits from vi.
+■ :w—-----> Saves the current fi le but doesn't exit from vi.
+■ :wq—----> Works the same as ZZ.
+■ :q—-----> Quits the current fi le. This works only if you don’t have any unsaved changes.
+■ :q!—----> Quits the current fi le and doesn’t save the changes you just made to the fi le
+
+
+■ Esc ----—-------> Remember that Esc gets you back to command mode.
+■ u --------------> Press u to undo the previous change you made.
+■ Ctrl+R ----—----> If you decide you didn’t want to undo the previous undo command,
+■ Caps Lock ----—-> Beware of hitting Caps Lock by mistake. Everything you type in vi has a different meaning when the letters are capitalized
+■ :!command ----—-> You can run a shell command while you are in vi using :! followed by a shell command name. For example, type :!date to see the current date and time,
+■ Ctrl+G ----—----> If you forget what you are editing, pressing these keys displays the name of the fi le that you are editing and the current line that you are on at the bottom of the screen. I
+
+
+
+Skipping around in the file
+--------------------------
+■ Ctrl+f ----> Pages ahead, one page at a time.
+■ Ctrl+b ----> Pages back, one page at a time.
+■ Ctrl+d ----> Pages ahead one-half page at a time.
+■ Ctrl+u ----> Pages back one-half page at a time.
+■ G ---------> Goes to the last line of the fi le.
+■ 1G --------> Goes to the fi rst line of the fi le.
+■ 35G -------> Goes to any line number (35, in this case)
+
+
+Searching for text
+---------------------
+■ /hello ----------> Searches forward for the word hello.
+■ ?goodbye --------> Searches backward for the word goodbye.
+■ /The.*foot ------> Searches forward for a line that has the word The in it and also, after that at some point, the word foot.
+■ ?[pP]rint -------> Searches backward for either print or Print. Remember that case matters in Linux.
+
+
+
+
+
+
+Using ex mode ( The vi editor was originally based on the ex editor, which didn’t let you work in fullscreen mode )
+-----------------------------------------------------------------------------------------------------------------------
+
+■ :g/Local —-----------------> Searches for the word Local, and prints every occurrence of that line from the fi le. (If there is more than a screenful, the output is piped to the more command.)
+■ :s/Local/Remote —----------> Substitutes Remote for the fi rst occurrence of the word Local on the current line.
+■ :g/Local/s//Remote —-------> Substitutes the fi rst occurrence of the word Local on every line of the fi le with the word Remote.
+■ :g/Local/s//Remote/g —-----> Substitutes every occurrence of the word Local with the word Remote in the entire fi le.
+■ :g/Local/s//Remote/gp —----> Substitutes every occurrence of the word Local with the word Remote in the entire fi le, and then prints each line so you can see
+                               the changes (piping it through less if output fi lls more than one page).
+
+
+
+
+##############
+To learn more about the vi editor, try typing vimtutor. The vimtutor command opens a
+tutorial in the vim editor that steps you through common commands and features you can
+use in vim.
+############
+
+
+
+
+Finding Files
+--------------------
+$$ locate .bashrc
+       Output: /etc/skel/.bashrc
+       Output: /home/cnegus/.bashrc
+# locate .bashrc
+       Output: /etc/skel/.bashrc
+       Output: /home/bill/.bashrc
+       Output: /home/joe/.bashrc
+       Output: /root/.bashrc
+
+
+$ find
+$ find /etc
+# find /etc
+$ find $HOME -ls
+
+# find /etc -name passwd
+    Output: /etc/pam.d/passwd
+    Output: /etc/passwd
+# find /etc -iname '*passwd*'
+    Output: /etc/pam.d/passwd
+    Output: /etc/passwd-
+    Output: /etc/passwd.OLD
+    Output: /etc/passwd
+    Output: /etc/MYPASSWD
+    Output: /etc/security/opasswd
+
+
+g examples:
+$ find /usr/share/ -size +10M
+$ find /mostlybig -size -1M
+$ find /bigdata -size +500M -size -5G -exec du -sh {} \;
+
+----------------------------------------------------------------
+
+Finding files by user
+-----------------
+$ find /home -user chris -ls
+# find /home \( -user chris -or -user joe \) -ls
+# find /etc -group ntp -ls
+# find /var/spool -not -user root -ls
+$ find /usr/bin -perm 755 -ls
+$ find /home/chris/ -perm -222 -type d -ls
+$ find /myreadonly -perm /222 -type f
+$ find . -perm -002 -type f -ls
+ $ find /etc/ -mmin -10
+
+■ You suspect that someone hacked your system three days ago. So, you search the
+system to see if any commands have had their ownership or permissions changed in
+the past three days:
+ $ find /bin /usr/bin /sbin /usr/sbin -ctime -3
+■ You want to find files in your FTP server (/var/ftp) and web server (/var/www)
+that have not been accessed in more than 300 days so that you can see if any need
+to be deleted:
+ $ find /var/ftp /var/www -atime +300
+
+
+■ There is a shared directory called /var/allusers. This command line enables you
+to find files that are owned by either joe or chris.
+ $ find /var/allusers \( -user joe -o -user chris \) -ls
+
+
+ ■ This command line searches for files owned by the user joe, but only those that
+are not assigned to the group joe:
+ $ find /var/allusers/ -user joe -not -group joe -ls
+
+
+
+■ You can also add multiple requirements on your searches. Here, a file must be
+owned by the user joe and must also be more than 1MB in size:
+ $ find /var/allusers/ -user joe -and -size +1M -ls
+
+
+------------------------------------------
+Finding files and executing commands
+------------
+
+$ find [options] -exec command {} \;
+$ find [options] -ok command {} \;
+
+
+$ find /etc -iname passwd -exec echo "I found {}" \;
+ I found /etc/pam.d/passwd
+ I found /etc/passwd
+
+
+ $ find /usr/share -size +5M -exec du {} \; | sort -nr
+
+
+ The -ok option enables you to choose, one at a time, whether each file found is
+acted upon by the command you enter. For example, you want to find all files that
+belong to joe in the /var/allusers directory (and its subdirectories) and move
+them to the /tmp/joe directory:
+ # find /var/allusers/ -user joe -ok mv {} /tmp/joe/ \;
+ < mv ... /var/allusers/dict.dat > ? y
+ < mv ... /var/allusers/five > ? y
+
+
+Searching in files with grep
+-------------------------------
+If you want to search for files that contain a certain search term, you can use the grep
+command. With grep, you can search a single file or search a whole directory structure of
+files recursively.
+
+
+
+$ grep desktop /etc/services
+desktop-dna 2763/tcp # Desktop DNA
+desktop-dna 2763/udp # Desktop DNA
+$ grep -i desktop /etc/services
+sco-dtmgr 617/tcp # SCO Desktop Administration Server
+sco-dtmgr 617/udp # SCO Desktop Administration Server
+airsync 2175/tcp # Microsoft Desktop AirSync Protocol
+
+
+To search for lines that don’t contain a selected text string, use the -v option. In the following example, a
+ll lines from the /etc/services file are displayed except those containing the text tcp (case-insensitive):
+
+$ grep -vi tcp /etc/services
+
+
+To do recursive searches, use the -r option and a directory as an argument. The following
+example includes the -l option, which just lists files that include the search text, without
+showing the actual lines of text. That search turns up files that contain the text peerdns
+(case-insensitive).
+
+$ grep -rli peerdns /usr/share/doc/
+/usr/share/doc/dnsmasq-2.66/setup.html
+/usr/share/doc/initscripts-9.49.17/sysconfig.txt
+
+
+The next example recursively searches the /etc/sysconfig directory for the term root.
+It lists every line in every file beneath the directory that contains that text. To make it
+easier to have the term root stand out on each line, the --color option is added. By
+default, the matched term appears in red.
+
+$ grep -ri --color root /etc/sysconfig/
+
+
+To search the output of a command for a term, you can pipe the output to the grep
+command. In this example, I know that IP addresses are listed on output lines from the ip
+command that include the string inet, so I use grep to display just those lines:
+
+$ ip addr show | grep inet
+inet 127.0.0.1/8 scope host lo
+inet 192.168.1.231/24 brd 192.168.1.255 scope global wlan0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

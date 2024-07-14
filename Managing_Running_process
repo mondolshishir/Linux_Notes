@@ -1,0 +1,244 @@
+ps, top, kill, jobs
+----------------------
+
+If you are using the GNOME desktop, you can use the
+    System Monitor tool (gnome-system-monitor)
+to provide a graphical means of working with processes
+
+
+
+To page through all of the processes running on your Linux system for the current user, add
+the pipe (|) and the less command to ps ux:
+$ ps ux | less
+
+To page through all processes running for all users on your system, use the ps aux
+command as follows:
+$ ps aux | less
+
+
+We can customize ps running process
+-----------
+$ ps -eo pid,user,uid,group,gid,vsz,rss,comm | less
+
+
+
+
+If you want to sort by a specific column, you can use the sort= option
+---------------------------------
+
+$ ps -eo pid,user,group,gid,vsz,rss,comm --sort=-vsz | head
+
+-----------------------------------------------END PS -----------------------------------------------------------------------
+
+
+TOP = Listing and changing processes with top
+-------------------------
+
+■ Press h ------------------------> to see help options, and then press any key to return to the top display.
+■ Press M ------------------------> to sort by memory usage instead of CPU, and then press P to return to sorting by CPU.
+■ Press the number 1 -------------> to toggle showing CPU usage of all your CPUs if you have more than one CPU on your system.
+■ Press R ------------------------> to reverse sort your output.
+■ Press u and enter a username ---> to display processes only for a particular user.
+
+
+
+Starting background processes
+-------------------------------
+
+If you have programs that you want to run while you continue to work in the shell, you can
+place the programs in the background. To place a program in the background at the time
+you run the program, type an ampersand (&) at the end of the command line, like this:
+
+$ find /usr > /tmp/allusrfiles &
+
+
+Using foreground and background commands
+---------------------
+# fg %1
+
+
+
+To refer to a background job (to cancel or bring it to the foreground), use a percent sign (%)
+followed by the job number. You can also use the following to refer to a background job:
+--------
+
+%Refers -------> to the most recent command put into the background (indicated by the plus sign when you type the jobs command). This action brings the command to the foreground.
+%string -------> Refers to a job where the command begins with a particular string of characters.The string must be unambiguous. (In other words, typing %vi when there are two
+                 vi commands in the background results in an error message.)
+%string -------> Refers to a job where the command line contains a string at any point. The string must be unambiguous or the match fails.
+%--     -------> Refers to the job stopped before the one most recently stopped.
+
+
+
+Killing processes with kill and killall
+-----
+
+SIGKILL (9), SIGTERM (15), SIGHUP (1)
+
+To kill a process immediately, you can use SIGKILL.
+
+
+Using kill to signal processes by PID
+--------
+
+TABLE 6.1 Signals Available in Linux
+-------------------------------------
+Signal      Number     Description
+SIGHUP      1           Hang-up detected on controlling terminal or death of controlling process.
+SIGINT      2           Interrupt from keyboard.
+SIGQUIT     3           Quit from keyboard.
+SIGABRT     6           Abort signal from abort(3).
+SIGKILL     9           Kill signal.
+SIGTERM     15          Termination signal.
+SIGCONT     19,18,25    Continue if stopped.
+SIGSTOP     17,19,23    Stop process.
+
+
+Setting processor priority with nice and renice
+------------------
+
+You can use the nice command to run a command with a particular nice value. When a
+process is running, you can change the nice value using the renice command, along with
+the process ID of the process, as in the example that follows:
+# nice -n +5 updatedb &
+
+
+Here’s how you would change the nice value for the updatedb command just run to –5:
+# renice -n -5 20284
+
+
+
+Limiting Processes with cgroups
+---------------
+You can use a feature like “nice” to give a single process more or less access to CPU time.
+Setting the nice value for one process, however, doesn’t apply to child processes that a process might start up or any other related processes that are part of a larger service. In other
+words, “nice” doesn’t limit the total amount of resources a particular user or application
+can consume from a Linux system.
+As cloud computing takes hold, many Linux systems will be used more as hypervisors than
+as general-purpose computers. Their memory, processing power, and access to storage will
+become commodities to be shared by many users. In that model, more needs to be done to
+control the amount of system resources to which a particular user, application, container,
+or virtual machine running on a Linux system has access.
+That’s where cgroups come in.
+Cgroups can be used to identify a process as a task, belonging to a particular control group.
+Tasks can be set up in a hierarchy where, for example, there may be a task called daemons
+that sets default limitations for all daemon server processes, then subtasks that may set
+specific limits on a web server daemon (httpd) for FTP service daemon (vsftpd).
+As a task launches a process, other processes that the initial process launches (called child
+processes) inherit the limitations set for the parent process. Those limitations might say
+that all the processes in a control group only have access to particular processors and certain sets of RAM. Or they may only allow access to up to 30 percent of the total processing
+power of a machine.
+
+The types of resources that can be limited by cgroups include the following:
+--------
+Storage (blkio):-----------------> Limits total input and output access to storage devices (such as hard disks, USB drives, and so on).
+Processor scheduling (cpu):  ----> Assigns the amount of access a cgroup has to be scheduled for processing power.
+Process accounting (cpuacct):----> Reports on CPU usage. This information can be leveraged to charge clients for the amount of processing power they use.
+CPU assignment (cpuset):     ----> On systems with multiple CPU cores, assigns a task to a particular set of processors and associated memory.
+Device access (devices):     ----> Allows tasks in a cgroup to open or create (mknod) selected device types.
+Suspend/resume (freezer):    ----> Suspends and resumes cgroup tasks.
+Memory usage (memory): ----------> Limits memory usage by task. It also creates reports on memory resources used.
+Network bandwidth (net_cls):-----> Limits network access to selected cgroup tasks. This is done by tagging network packets to identify the cgroup task that originated the packet and having the Linux traffic controller monitor and restrict packets coming from each cgroup.
+Network traffic (net_prio):------> Sets priorities of network traffic coming from selected cgroups and lets administrators change these priorities on the fly.
+Name spaces (ns):----------------> Separates cgroups into namespaces, so processes in one cgroup can only see the namespaces associated with the cgroup. Namespaces can include separate process tables, mount tables, and network interfaces.
+
+
+
+■ Red Hat Enterprise Linux Resource Management and Linux Containers Guide:
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/
+html-single/resource_management _ guide/index
+■ Kernel documentation on cgroups: Refer to files in the /usr/share/doc/
+kernel-doc-*/Documentation/cgroups directory after installing the kerneldoc package.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
