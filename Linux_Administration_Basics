@@ -1,0 +1,25 @@
+Using Graphical Administration Tools
+------
+Using Cockpit browser-based administration
+---------------
+Cockpit is the best browser-based Linux system administration tool that I have ever seen. It
+brings together a range of Linux administrative activities into one interface and taps into
+a diverse set of Linux APIs using cockpit-bridge. As someone doing Linux administration,
+however, you just need to know that you will get a consistent and stable way of administering your systems with Cockpit.
+Getting started with Cockpit is as simple as enabling the cockpit socket and pointing a
+web browser at the Cockpit service. Because of Cockpit’s plug-in design, there are new tools
+being created all the time that you can add to your system’s Cockpit interface.
+
+
+1. If Cockpit is not already installed, do the following:
+ # dnf install cockpit
+2. Log in as root user, and enable the Cockpit socket:
+ # systemctl enable --now cockpit.socket
+ Created symlink /etc/systemd/system/sockets.target.wants/
+cockpit.socket
+ → /usr/lib/systemd/system/cockpit.socket.
+3. Open your web browser to port 9090 on the system where you just enabled Cockpit.
+You can use the hostname or IP address. Port 9090 is configured for https by
+default, although you can reconfigure that if you like to use http. Here are examples of addresses to type into your browser’s address bar:
+ https://host1.example.com:9090/
+ https://192.168.122.114:9090/
