@@ -1,0 +1,13 @@
+Transitioning from yum to dnf
+-------------------------------
+The dnf command-line interface represents the next generation of YUM. DNF, which refers
+to itself as Dandified YUM, (https://github.com/rpm-software-management/dnf/)
+has been part of Fedora since version 18 and has just been added as the default RPM package
+manager for RHEL 8. Like yum, dnf is a tool for finding, installing, querying, and generally
+managing RPM packages from remote software repositories to your local Linux system.
+While dnf maintains a basic command-line compatibility with yum, one of its main differences is that it adheres to a strict API. That API encourages the development of extensions
+and plug-ins to dnf.
+For our purposes, almost all of the yum commands described in this chapter can be replaced
+by dnf or used as they are. The yum command is a symbolic link to dnf in Fedora and
+RHEL, so typing either command has the same result. For more information on DNF, refer to
+the DNF page at https://dnf.readthedocs.io/.

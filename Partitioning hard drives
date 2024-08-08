@@ -1,0 +1,72 @@
+Understanding different partition types
+------------------------------------------
+
+Linux partitions ---->  Use this option to create a partition for an ext2, ext3, or ext4 filesystem type that is added directly to a partition on your hard disk
+                        (or other storage medium). The xfs filesystem type can also be used on a Linux partition. (In fact, xfs is now the default filesystem type for RHEL 8 systems.)
+LVM partitions ------>  Create an LVM partition if you plan to create or add to an LVM volume group.
+                        LVMs give you more flexibility in growing, shrinking, and moving partitions later than regular partitions do.
+RAID partitions ----->  Create two or more RAID partitions to create a RAID array. These partitions should be on separate disks to create an effective RAID array.
+                        RAID arrays can help improve performance, reliability, or both as those features relate to reading, writing, and storing your data.
+Swap partitions ----->  Create a swap partition to extend the amount of virtual memory available on your system.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+To see filesystem types that are currently loaded in your kernel, type cat /proc/
+filesystems. The list that follows shows a sample of filesystem types that are currently
+supported in Linux, although they may not be in use at the moment or even available on
+the Linux distribution you are using.
+befs: Filesystem used by the BeOS operating system.
+Note
+With the addition of automatic mounting features and changes in how removable media are identified with the Linux
+2.6 kernel (using features such as Udev and Hardware Abstraction Layer), you no longer need to mount removable
+media manually for many Linux desktop systems. Understanding how to mount and unmount filesystems manually on
+a Linux server, however, can be a very useful skill if you want to mount remote filesystems or temporarily mount partitions in particular locations.
+Part III: Becoming a Linux System Administrator
+292
+btrfs: A copy-on-write filesystem that implements advanced filesystem features. It
+offers fault tolerance and easy administration. The btrfs file system has recently
+grown in popularity for enterprise applications.
+cifs: Common Internet Filesystem (CIFS), the virtual filesystem used to access servers
+that comply with the SNIA CIFS specification. CIFS is an attempt to refine and standardize the SMB protocol used by Samba and Windows file sharing.
+ext4: Successor to the popular ext3 filesystem. It includes many improvements over
+ext3, such as support for volumes up to 1 exbibyte and file sizes up to 16 tebibytes.
+(This replaced ext3 as the default filesystem used in Fedora and RHEL. It has since
+been supplanted by xfs as the default for RHEL.)
+ext3: Ext filesystems are the most common in most Linux systems. Compared ext2,
+the ext3 filesystem, also called the third extended filesystem, includes journaling features that, compared to ext2, improve a filesystem’s capability to recover
+from crashes.
+ext2: The default filesystem type for earlier Linux systems. Features are the same as
+ext3, except that ext2 doesn’t include journaling features.
+ext: This is the first version of ext3. It is not used very often anymore.
+iso9660: Evolved from the High Sierra filesystem (the original standard for CD-ROMs).
+Extensions to the High Sierra standard (called Rock Ridge extensions) allow iso9660
+filesystems to support long filenames and UNIX-style information (such as file permissions, ownership, and links). Data CD-ROMs typically use this filesystem type.
+kafs: AFS client filesystem. Used in distributed computing environments to share files
+with Linux, Windows, and Macintosh clients.
+minix: Minix filesystem type, used originally with the Minix version of UNIX. It supports filenames of up to only 30 characters.
+msdos: An MS-DOS filesystem. You can use this type to mount media that comes from
+old Microsoft operating systems.
+vfat: Microsoft extended FAT (VFAT) filesystem.
+exfat: Extended FAT (exFAT) file system that has been optimized for SD cards, USB
+drives, and other flash memory.
+umsdos: An MS-DOS filesystem with extensions to allow features that are similar to
+UNIX (including long filenames).
+proc: Not a real filesystem, but rather a filesystem interface to the Linux kernel. You
+probably won’t do anything special to set up a proc filesystem. However, the /proc
+mount point should be a proc filesystem. Many utilities rely on /proc to gain access
+to Linux kernel information.
+Chapter 12: Managing Disks and Filesystems
+293
+12
+reiserfs: ReiserFS journaled filesystem. ReiserFS was once a common default filesystem
+type for several Linux distributions. However, ext and xfs filesystems are by far
+more common filesystem types used with Linux today.
+swap: Used for swap partitions. Swap areas are used to hold data temporarily when
+RAM is used up. Data is swapped to the swap area and then returned to RAM when it
+is needed again.
+squashfs: Compressed, read-only filesystem type. Squashfs is popular on live CDs,
+where there is limited space and a read-only medium (such as a CD or DVD).
+nfs: Network Filesystem (NFS) type of filesystem. NFS is used to mount filesystems on
+other Linux or UNIX computers.
+hpfs: Filesystem is used to do read-only mounts of an OS/2 HPFS filesystem.
+ncpfs: A filesystem used with Novell NetWare. NetWare filesystems can be mounted
+over a network.
+ntfs: Windows NT filesystem. Depending upon the distribution you have, it may be supported as a read-only filesystem (so that you can mount and copy files from it).
+ufs: Filesystem popular on Sun Microsystems’s operating systems (that is, Solaris
+and SunOS).
+jfs: A 64-bit journaling filesystem by IBM that is relatively lightweight for the many
+features it has.
+xfs: A high-performance filesystem originally developed by Silicon Graphics that works
+extremely well with large files. This filesystem is the default type for RHEL 7.
+gfs2: A shared disk filesystem that allows multiple machines to all use the same shared
+disk without going through a network filesystem layer such as CIFS, NFS, and so on.
+To see the list of filesystems that come with the kernel you are using, type
+ls /lib/modules/kernelversion/kernel/fs/. The actual modules are stored in
+subdirectories of that directory. Mounting a filesystem of a supported type causes the
+filesystem module to be loaded, if it is not already loaded.
+Type man fs to see descriptions of Linux filesystems.

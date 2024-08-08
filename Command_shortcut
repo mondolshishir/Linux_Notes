@@ -132,6 +132,16 @@ Adding environment variables in .bashrc file
 
 
 
+For knowing how much file contain in the directory
+--------------
+# ls | wc -l
+# ls | less
+
+# elinks -----> cli mode e browser
+
+
+
+
 
 
 

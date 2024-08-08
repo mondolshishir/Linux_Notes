@@ -1,0 +1,112 @@
+Creating group accounts
+As the root user, you can create new groups from the command line with the groupadd
+command. Also, as noted earlier, groups are created automatically when a user account
+is created.
+Group ID numbers from 0 through 999 are assigned to special administrative groups. For
+example, the root group is associated with GID 0. Regular groups begin at 1000 for Red
+Hat Enterprise Linux and Fedora. On the first UNIX systems, GIDs went from 0 to 99. Other
+Linux systems reserve GIDs between 0 to 500 for administrative groups. A relatively new
+feature, described earlier, reserves administrative user and group accounts up to 199 and
+200, respectively, and lets you create your own administrative accounts between those
+numbers and 999.
+
+
+
+Here are some examples of creating a group account with the groupadd command:
+# groupadd kings
+# groupadd -g 1325 jokers
+In the examples just shown, the group named kings is created with the next available
+group ID. After that, the group jokers is created using the 1325 group ID. Some administrators like using an undefined group number above 200 and under 1000 so that the group
+they create doesn’t intrude on the group designations above 1000 (so UID and GID numbers
+can go along in parallel).
+To change a group later, use the groupmod command, as in the following example:
+# groupmod -g 330 jokers
+# groupmod -n jacks jokers
+In the first example, the group ID for jokers is changed to 330. In the second, the name
+jokers is changed to jacks. If you then wanted to assign any of the groups as supplementary groups to a user, you can use the usermod command (as described earlier in
+this chapter).
+
+
+--------------------------------
+Managing Users in the Enterprise
+----------
+Setting permissions with Access Control Lists (ACL)
+
+
+If you are looking into setting up your own centralized authentication services and you
+want to use an open-source project, I recommend looking into the 389 Directory Server
+(https://directory.fedoraproject.org/). Fedora and other Linux systems offer this
+enterprise-quality LDAP server.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

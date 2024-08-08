@@ -1,0 +1,43 @@
+Administrative log files and systemd journal
+--------------------------------------------
+
+# journalctl
+# journalctl --list-boots | head
+# journalctl -b 488e152a3e2b4f6bb86be366c55264e7
+# journalctl -k
+
+# journalctl _SYSTEMD_UNIT=sshd.service
+# journalctl PRIORITY=0
+# journalctl -a -f
+
+
+
+Using Other Administrative Accounts
+------------------------------------
+lp:  ------->  User owns such things as the /var/log/cups printing log file and various printing cache and spool files. The home directory for lp is /var/spool/lpd.
+apache: ---->  User can set up content files and directories on an Apache web server. It is primarily used to run the web server processes (httpd) in RHEL and Fedora systems,
+               while the www-data user runs the Apache service (apache2) on Ubuntu systems.
+avahi: ----->  User runs the avahi daemon process to provide zeroconf services on your network.
+chrony: ---->  User runs the chronyd daemon, which is used to maintain accurate computer clocks.
+postfix: --->  User owns various mail server spool directories and files. The user runs the daemon processes used to provide the postfix service (master).
+bin: ------->  User owns many commands in /bin in traditional UNIX systems. This is not the case in some Linux systems (such as Ubuntu, Fedora, and Gentoo)
+               because root owns most executable files. The home directory of bin is /bin.
+
+news: ------>  User could do administration of Internet news services, depending on how you set permission for /var/spool/news and other news-related resources.
+               The home directory for news is /etc/news.
+rpc: -------> User runs the remote procedure calls daemon (rpcbind), which is used to receive calls for services on the host system. The NFS service uses the RPC service.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,145 @@
+Installing Linux in the Enterprise
+--------------------------------
+
+Launch the installation medium.
+Start the anaconda kernel
+Add kickstart or other boot options
+Find software packages.
+Modify installation with kickstart scripts.
+Install server
+PXE server
+Kickstart files
+
+
+Exploring Common Installation Topics
+-----------
+
+Upgrading or installing from scratcH
+----
+Remove extra packages.
+Check configuration files.
+Dual booting
+Add a hard disk.
+Resize your Windows partition.
+Installing Linux to run virtually
+
+
+Using installation boot options
+-----------
+Boot options for disabling features
+Boot options for video problems
+Boot options for special installation types
+
+Boot Options for Disabling Features
+--------------------
+
+Installer                   Option Tells System
+---------                   --------------------
+nofirewire ----->  Not to load support for firewire devices
+nodma ---------->  Not to load DMA support for hard disks
+noide ---------->  Not to load support for IDE devices
+nompath -------->  Not to enable support for multipath devices
+noparport ------>  Not to load support for parallel ports
+nopcmcia ------->  Not to load support for PCMCIA controllers
+noprobe -------->  Not to probe hardware; instead prompt user for drivers
+noscsi --------->  Not to load support for SCSI devices
+nousb ---------->  Not to load support for USB devices
+noipv6 --------->  Not to enable IPV6 networking
+nonet ---------->  Not to probe for network devices
+numa-off ------->  To disable the Non-Uniform Memory Access (NUMA) for AMD64 architecture
+acpi=off ------->  To disable the Advanced Configuration and Power Interface (ACPI)
+
+
+Boot Options for Video Problems
+-------------------------------
+
+Boot Option             Tells System
+----------              ------------
+xdriver=vesa ----------->  Use standard vesa video driver
+resolution=1024x768 ---->  Choose exact resolution to use
+nofb ------------------->  Don't use the VGA 16 framebuffer driver
+skipddc ---------------->  Don't probe DDC of the monitor (the probe can hang the installer)
+graphical -------------->  Force a graphical installation
+
+Boot options for kickstarts and remote repositories
+---------------------------------------------------
+
+Boot Options for VNC Installations
+--------
+
+Boot Option             Tells System
+----------              -------------
+vnc --------------------------->  Run installation as a VNC server
+vncconnect=hostname[:port] ---->  Connect to VNC client hostname and optional port
+vncpassword=password ---------->  Client uses password (at least 8 characters) to connect to installer
+
+
+Using specialized storage
+--------------------------
+
+Firmware RAID
+Multipath devices
+Other SAN devices
+iSCSI devices
+Fibre Channel over Ethernet Devices (FCoE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

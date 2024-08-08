@@ -1,0 +1,143 @@
+Adding users with useradd
+-----------------------------
+
+-c "comment": ------> Provide a description of the new user account. Typically, this is the person's full name. Replace comment with the name of the user account (-c Jake). Use quotes to enter multiple words (for example,-c ″Jake Jackson″).
+-d home_dir: -------> Set the home directory to use for the account. The default is to name it the same as the login name and to place it in /home. Replace home_dir with the directory name to use (for example, -d /mnt/homes/jake).
+-D: ----------------> Rather than create a new account, save the supplied information as the new default settings for any new accounts that are created.
+-e expire_date: ----> Assign the expiration date for the account in YYYY-MM-DD format. Replace expire_date with a date that you want to use. (For example, to expire an account on May 5, 2022, use -e 2022-05-05.)
+-f -1: -------------> Set the number of days after a password expires until the account is permanently disabled. The default, -1, disables the option. Setting this to 0 disables the account immediately after the password has expired. Replace -1 (that's minus one) with the number to use.
+-g group: ----------> Set the primary group (it must already exist in the /etc/group file) the new user will be in. Replace group with the group name (for example, -g wheel). Without this option, a new group is created that is the same as the username and is used as that user's primary group.
+-G grouplist: ------> Add the new user to the supplied comma-separated list of supplementary groups (for example, -G wheel,sales,tech,lunch). (If you use -G later with usermod, be sure to use -aG and not just -G. If you don't, existing supplementary groups are removed and the groups you provide here are the only ones assigned.)
+-k skel_dir: -------> Set the skeleton directory containing initial configuration files and login scripts that should be copied to a new user's home directory. This parameter can be used only in conjunction with the -m option. Replace skel_dir with the directory name to use. (Without this option, the /etc/skel directory is used.)
+-m: ----------------> Automatically create the user's home directory and copy the files in the skeleton directory (/etc/skel) to it. (This is the default action for Fedora and RHEL, so it's not required. It is not the default for Ubuntu.)
+-M: ----------------> Do not create the new user's home directory, even if the default behavior is set to create it.
+-n: ----------------> Turn off the default behavior of creating a new group that matches the name and user ID of the new user. This option is available with Fedora and RHEL systems. Other Linux systems often assign a new user to the group named users instead.
+-o: ----------------> Use with -u uid to create a user account that has the same UID as another username. (This effectively lets you have two different usernames with authority over the same set of files and directories.)
+-p passwd: ---------> Enter a password for the account you are adding. This must be an encrypted password. Instead of adding an encrypted password here, you can simply use the passwd user command later to add a password for user. (To generate an encrypted MD5 password, type openssl passwd.)
+-s shell: ----------> Specify the command shell to use for this account. Replace shell with the command shell (for example, -s /bin/csh).
+-u user_id: --------> Specify the user ID number for the account (for example, -u 1793). Without the -u option, the default behavior is to assign the next available number automatically. Replace user_id with the ID number. User IDs that are automatically assigned to regular users begin at 1000, so you should use IDs for regular users that are above that number in a way that doesn't collide with the automatic assignments.
+
+
+
+# useradd -c "Sara Green" sara
+# passwd sara
+
+Most account settings are assigned using default values. You can set more values explicitly if you want to.
+Here's an example that uses a few more options to do so:
+# useradd -g users -G wheel,apache -s /bin/tcsh -c "Sara Green" sara
+
+
+
+
+------------------------------------
+Modifying users with usermod
+---------
+
+-c username: ------->  Change the description associated with the user account. Replace username with the name of the user account (-c jake). Use quotes to enter multiple words (for example, -c ″Jake Jackson″).
+-d home_dir: ------->  Change the home directory to use for the account. The default is to name it the same as the login name and to place it in /home. Replace home_dir with the directory name to use (for example, -d /mnt/homes/jake).
+-e expire_date: ---->  Assign a new expiration date for the account in YYYY-MM-DD format. Replace expire_date with a date you want to use. (For October 15, 2022, use -e 2022-10-15.)
+-f -1: ------------->  Change the number of days after a password expires until the account is permanently disabled. The default, -1, disables the option. Setting this to 0 disables the account immediately after the password has expired. Replace -1 with the number to use.
+-g group: ---------->  Change the primary group (as listed in the /etc/group file) the user will be in. Replace group with the group name (for example, -g wheel).
+-G grouplist: ------>  Set the user’s secondary groups to the supplied comma-separated list of groups. If the user is already in at least one group besides the user’s private group, you must add the -a option as well (-Ga). If not, the user belongs to only the new set of groups and loses membership to any previous groups.
+-l login_name: ----->  Change the login name of the account.
+-L:  ---------------> Lock the account by putting an exclamation point at the beginning of the encrypted password in /etc/shadow. This locks the account while still allowing you to leave the password intact (the -U option unlocks it).
+-m: ---------------->  Available only when –d is used. This causes the contents of the user’s home directory to be copied to the new directory.
+-o: ---------------->  Use only with -u uid to remove the restriction that UIDs must be unique.
+-s shell: ---------->  Specify a different command shell to use for this account. Replace shell with the command shell (for example, -s bash).
+-u user_id: -------->  Change the user ID number for the account. Replace user_id with the ID number (for example, -u 1474).
+-U: ---------------->  Unlocks the user account (by removing the exclamation mark at the beginning of the encrypted password).
+
+he following are examples of the usermod command:
+# usermod -s /bin/csh chris
+# usermod -Ga sales,marketing, chris
+
+
+Deleting users with userdel
+--------
+
+# userdel -r shishir
+Here, the user chris is removed from the /etc/password file. The –r option removes the
+user’s home directory as well. If you choose not to use –r, as follows, the home directory
+for chris is not removed:
+# userdel shishir
+
+Before deleting an user we can find the user details from below command
+# find / -user shishir -ls
+# find / -uid 504 -ls
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

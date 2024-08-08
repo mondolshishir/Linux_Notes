@@ -1,0 +1,38 @@
+$ dmesg | less
+$ lspci
+$ lsusb
+$ lscpu
+
+# lsmod
+# modprobe parport
+
+# modprobe parport_pc io=0x3bc irq=auto
+# rmmod parport_pc
+
+# rmmod usbcore
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
