@@ -8,4 +8,53 @@ Building a secure (HTTPS) website
 Checking Apache for errors
 
 -------------------------------------------------------------------------------
+    INSTALL AND RUN SERVER
+    -----------------------
+# yum/dnf repolist all
+# dnf install -y httpd
+# cd /var/www/html/
+# vi index.html
+# systemctl start/enable/status/restart httpd
+# #Note:Now we can access web server from localhost PC
+# # If we want to access web server from another host pc , we need to configure FIREWALL.Let's do it!
+# firewall-cmd --permanent --add-service={ http, https } --zone=public #Note: we will also configure https, so we add https here.
+# firewall-cmd --reload
+# firewall-cmd --list-sevices
+# curl localhost/http://192.168.0.106
+# # By default httpd.conf file contain default configuration.Location: vim /etc/httpd/conf/httpd.conf
+
+# # LOCAL NAME RESULATION
+# vi /etc/hosts > 192.168.0.106     shishir.net     shishir
+# hostnamectl set-hostname shishir.net
+#
+
+
+################## CONFIGURE WEB-SERVER IN DIFFERENT LOCATION ###############
+# mkdir /ecommerce
+# #if we change location we need to disable SELinux, if we enable SELinux, we need to entry SELinux tag created directory/subdirectory.
+# # For checking SELinux tag policy in default location we can type
+# semanage fcontext -l | less
+# ll -ldZ /var/www/html/
+#
+# # for checking SELinux
+# getenforce
+if output "Enforcing", it's enabled(1), if output shown Permisive(0) it's disabled.
+# # for disabling SELinux type
+# Setenforce 0
+#
+#
+# # if we want to create different file and change the default location, we need to create  .conf file under  /etc/httpd/conf.d/
+# vim /etc/httpd/conf.d/hello.conf
+    <VirtualHost    *:80>
+        ServerName  mysite.com
+        DocumentRoot    /ecommerce
+    </VirtualHost>
+    <Directory  "/ecommerce">
+        Require all granted
+    </Directory>
+
+
+# vim /etc/hosts
+    192.168.0.106   mysite.com
+
 

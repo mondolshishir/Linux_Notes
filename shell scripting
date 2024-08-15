@@ -1,0 +1,15 @@
+Types of Linux shell
+-----------------
+
+01) Gnome
+02) KDE
+03) sh
+04) bash
+05) csh and tcsh
+06) ksh
+
+cate /etc/shells
+
+if we want to show to all the file users have,
+    # ls -ltra   ---> l=long format, t=modification time, r=reverse order, a=including hidden file
+

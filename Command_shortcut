@@ -7,6 +7,8 @@ Keystrokes for Navigating Command Lines
 05) Ctrl+A ---> Beginning of line (Go the beginning of the current line)
 06) Ctrl+E ---> End of the line (Go to the end of the line)
 07) Ctrl+L ---> Clear screen (Clear screen and leave line at the top of the screen)
+08) Ctlr+D ---> Scroll Down half page
+09) Ctrl+U ---> Scroll Up half page
 
 
 Keystrokes for Editing Command Lines
