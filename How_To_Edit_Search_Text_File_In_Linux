@@ -166,7 +166,7 @@ $ find /bigdata -size +500M -size -5G -exec du -sh {} \;
 ----------------------------------------------------------------
 
 Finding files by user
------------------
+-----------  ------
 $ find /home -user chris -ls
 # find /home \( -user chris -or -user joe \) -ls
 # find /etc -group ntp -ls

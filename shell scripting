@@ -13,3 +13,24 @@ cate /etc/shells
 if we want to show to all the file users have,
     # ls -ltra   ---> l=long format, t=modification time, r=reverse order, a=including hidden file
 
+
+############ BASH VARIABLE ############
+
+
+-s -----> s means suppressess input, like password which can not ne shown when typing
+-p -----> p means to show output as it is, text msg
+
+########## Aliases #############
+# alaiases
+# # if we want to assigning aliases for a user permanently then need to add into user's bashrc profile
+# ~/.bashrc
+# unalias u -----> for removing an alias
+#
+
+######### BASH COLOUR ##############
+# echo -e "\e[34;41m Hello how are you?\e[0m"
+
+############# Automation Script ####################
+# #!/bin/bash
+echo -e "\e[4m System Information\e[0m"
+ 
